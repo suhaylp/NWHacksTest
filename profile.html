@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <h1>Create Your Profile</h1>
+    <form action="/submit_profile" method="post">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="interests">Interests:</label><br>
+        <textarea id="interests" name="interests" required></textarea><br>
+
+        <input type="submit" value="Create Profile">
+    </form>
+</body>
+
+</html>
