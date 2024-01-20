@@ -5,5 +5,7 @@ function generateRandomName() {
     const noun = nouns[Math.floor(Math.random() * nouns.length)];
     document.getElementById("randomName").value = adjective + " " + noun;
 }
-
+document.getElementById('uploadButton').addEventListener('click', function () {
+    document.getElementById('photoUpload').click();
+});
 
