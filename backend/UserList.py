@@ -1,22 +1,25 @@
 import os
 import User
 
-userList = []
-
-class UserList()    :
+class UserList():
+    userList = []
     def __init__(self, userList):
         self._userList = userList
     
     def add(self, user):
-        i
+        inList = False
         for i in userList:
             if i.getID == user.getID:
                 inList = True
-        self._userList.append(user)
+        if inList == False:
+            self._userList.append(user)
 
     def remove(self, user):
         for i in userList:
             if i.getID == user.getID:
                 self._userList.remove(i)
+
+    def getUserList(self):
+        return self._userList
 
         

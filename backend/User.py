@@ -1,19 +1,19 @@
 import os
 import FilterList
 
-#setting up the different variables that make up an user: id, name, age, filters, aboutMe, extraInformation and list of pictures
-id = 0
-name = ""
-age = 0
-filters = FilterList()
-#placeholder variable for the about me section: 
-aboutMe = "" 
-#placeholder variable for the extra information: 
-extraInformation = ""
-#placeholder variable to store the list of pictures to be added in the front end
-
 #the user class with the respective getter and setter methods for most of the variables
 class User():
+    #setting up the different variables that make up an user: id, name, age, filters, aboutMe, extraInformation and list of pictures
+    id = 0
+    name = ""
+    age = 0
+    filters = FilterList()
+    #placeholder variable for the about me section: 
+    aboutMe = "" 
+    #placeholder variable for the extra information: 
+    extraInformation = ""
+    #placeholder variable to store the list of pictures to be added in the front end
+    
     def __init__(self, id, name, age, filters, aboutMe, extraInformation):
         self._id = id
         self._name = name
