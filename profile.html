@@ -11,7 +11,7 @@
 
 <body>
     <h1>Create Your Profile</h1>
-    <form action="/submit_profile" method="post">
+    <form action="/submit_profile" method="post" enctype="multipart/form-data">
         <label for="randomName">Your Anonymous Name:</label><br>
         <input type="text" id="randomName" name="randomName" readonly><br>
         <button type="button" onclick="generateRandomName()">Generate Random Name</button><br>
@@ -25,6 +25,18 @@
             <option value="cooking">Cooking</option>
             <option value="traveling">Traveling</option>
         </select><br>
+
+        <!-- Photo Upload Section -->
+        <div class="photo-upload-container">
+            <label for="photoUpload"></label><br>
+            <input type="file" id="photoUpload" name="photos" accept="image/*" multiple hidden>
+            <button type="button" id="uploadButton">Upload Photos</button>
+        </div>
+
+        <label for="aboutMe">About Me:</label><br>
+        <textarea id="aboutMe" name="aboutMe" rows="4" cols="50"
+            placeholder="Tell us something about yourself..."></textarea><br>
+
 
         <input type="submit" value="Create Profile">
     </form>
