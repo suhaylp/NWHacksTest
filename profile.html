@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Profile</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 
 <body>
     <h1>Create Your Profile</h1>
@@ -15,7 +16,14 @@
         <input type="text" id="name" name="name" required><br>
 
         <label for="interests">Interests:</label><br>
-        <textarea id="interests" name="interests" required></textarea><br>
+        <select id="interests" name="interests" required>
+            <option value="">Select an interest</option>
+            <option value="reading">Reading</option>
+            <option value="hiking">Hiking</option>
+            <option value="gaming">Gaming</option>
+            <option value="cooking">Cooking</option>
+            <option value="traveling">Traveling</option>
+        </select><br>
 
         <input type="submit" value="Create Profile">
     </form>
