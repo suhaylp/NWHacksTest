@@ -5,41 +5,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
 </head>
 
 <body>
     <h1>Create Your Profile</h1>
     <form action="/submit_profile" method="post" enctype="multipart/form-data">
-        <label for="randomName">Your Anonymous Name:</label><br>
-        <input type="text" id="randomName" name="randomName" readonly><br>
-        <button type="button" onclick="generateRandomName()">Generate Random Name</button><br>
+        <div class="left-section">
+            <!-- Photo Upload Section -->
+            <div class="photo-upload-container">
+                <label for="photoUpload">Upload Photos:</label><br>
+                <input type="file" id="photoUpload" name="photos" accept="image/*" multiple hidden>
+                <button type="button" onclick="document.getElementById('photoUpload').click();">Choose Photos</button>
+            </div>
 
-        <label for="interests">Interests:</label><br>
-        <select id="interests" name="interests" required>
-            <option value="">Select an interest</option>
-            <option value="reading">Reading</option>
-            <option value="hiking">Hiking</option>
-            <option value="gaming">Gaming</option>
-            <option value="cooking">Cooking</option>
-            <option value="traveling">Traveling</option>
-        </select><br>
-
-        <!-- Photo Upload Section -->
-        <div class="photo-upload-container">
-            <label for="photoUpload"></label><br>
-            <input type="file" id="photoUpload" name="photos" accept="image/*" multiple hidden>
-            <button type="button" id="uploadButton">Upload Photos</button>
+            <!-- Generate Random Name Button -->
+            <button type="button" onclick="generateRandomName()">Generate Random Name</button>
         </div>
 
-        <label for="aboutMe">About Me:</label><br>
-        <textarea id="aboutMe" name="aboutMe" rows="4" cols="50"
-            placeholder="Tell us something about yourself..."></textarea><br>
+        <div class="right-section">
+            <!-- About Me Section -->
+            <label for="aboutMe">About Me:</label><br>
+            <textarea id="aboutMe" name="aboutMe" rows="4" cols="50"
+                placeholder="Tell us something about yourself..."></textarea>
+        </div>
 
+        <!-- Course Selection Section -->
+        <div class="full-width">
+            <label for="courses">Courses:</label>
+            <select id="courses" name="courses[]" multiple>
+                <option value="biology101">Biology 101</option>
+                <option value="chemistry101">Chemistry 101</option>
+                <option value="physics101">Physics 101</option>
+                <option value="math101">Math 101</option>
+                <option value="english101">English 101</option>
+                <option value="history101">History 101</option>
+                <!-- More courses can be added here -->
+            </select>
+        </div>
 
         <input type="submit" value="Create Profile">
     </form>
+    <script src="script.js"></script>
 </body>
 
 </html>

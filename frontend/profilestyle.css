@@ -8,8 +8,17 @@ body {
 
 h1 {
     color: #007bff;
+    text-align: center;
+    font-size: 2.5em;
+    /* Slightly larger font size */
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    font-weight: 700;
+    /* Bolder font weight */
+    font-family: 'Roboto', sans-serif;
+    /* Applying the Roboto font */
+    text-shadow: 1px 1px 2px #6c757d;
 }
-
 
 
 form {
@@ -17,8 +26,12 @@ form {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
     margin: 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    max-width: 800px;
+    /* Adjusted width */
 }
 
 label {
@@ -28,7 +41,8 @@ label {
 }
 
 input[type="text"],
-select {
+select,
+textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 10px;
@@ -68,47 +82,70 @@ input[type="submit"]:hover {
 
 /* Responsive adjustments */
 @media (max-width: 600px) {
-    body {
-        padding: 10px;
+    form {
+        flex-direction: column;
     }
 
-    form {
-        margin: 10px;
+    .left-section,
+    .right-section,
+    .full-width {
+        flex-basis: 100%;
     }
+}
+
+/* Styles for the layout */
+.left-section {
+    flex-basis: 60%;
+    /* Larger width for photo box */
+    margin-right: 2%;
+    /* Small gap between sections */
+}
+
+.right-section {
+    flex-basis: 38%;
+    /* Remaining space for about me section */
+}
+
+.full-width {
+    flex-basis: 100%;
+    /* Takes full width */
+    margin-top: 20px;
 }
 
 .photo-upload-container {
+    margin: 0;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    width: 100%;
+    /* Full width of its container */
+    height: 300px;
+    /* Increased height */
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 200px;
-    height: 200px;
-    margin: 20px auto;
-    border: 2px dashed #ccc;
-    border-radius: 10px;
-
+    flex-direction: column;
 }
 
-.photo-upload-container input[type=file] {
+.photo-upload-container input[type="file"] {
     width: 100%;
     height: 100%;
     opacity: 0;
+}
 
+#uploadButton {
+    padding: 10px 20px;
+    margin-top: 10px;
+}
 
-    .photo-upload-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 200px;
-        height: 200px;
-        margin: 20px auto;
-        border: 2px dashed #ccc;
-        border-radius: 10px;
-        position: relative;
-    }
+.course-selection select[multiple] {
+    width: 100%;
+    height: auto;
+    /* Adjust the height based on your needs */
+    padding: 5px;
+    border: 1px solid #ccc;
+}
 
-    #uploadButton {
-        padding: 10px 20px;
-        margin-top: 10px;
-    }
+.course-selection label {
+    display: block;
+    margin-bottom: 5px;
+}

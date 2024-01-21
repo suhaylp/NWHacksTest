@@ -8,14 +8,14 @@ class UserList():
     
     def add(self, user):
         inList = False
-        for i in userList:
+        for i in self._userList:
             if i.getID == user.getID:
                 inList = True
         if inList == False:
             self._userList.append(user)
 
     def remove(self, user):
-        for i in userList:
+        for i in self._userList:
             if i.getID == user.getID:
                 self._userList.remove(i)
 

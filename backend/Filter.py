@@ -8,18 +8,15 @@ class Filter():
     def getName(self):
         return self._filterName
 
-class AcademicFilter():
+class AcademicFilter(Filter):
     courseNumber = ""
     def __init__ (self, filterName, courseNumber):
         super().__init__(filterName)
         self._courseNumber = courseNumber
-
-    def getCourseSubject(self):
-        
     
     def getCourseNumber(self):
         return self._courseNumber
     
 class PersonalFilter(Filter):
     def __init__(self, filterName):
-        self._filterName = filterName
+        super().__init__(filterName)
